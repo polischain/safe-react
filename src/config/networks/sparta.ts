@@ -11,7 +11,7 @@ import {
 
 const baseConfig: EnvironmentSettings = {
   clientGatewayUrl: 'https://safe-client.gnosis.io/v1',
-  txServiceUrl: 'https://safe-transaction.xdai.gnosis.io/api/v1',
+  txServiceUrl: 'https://safe-tx.sparta.polis.tech/api/v1',
   safeUrl: 'https://safe.polis.tech/app',
   gasPrice: 1e9,
   rpcServiceUrl: 'https://sparta-rpc.polis.tech/',
