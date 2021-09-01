@@ -11,7 +11,7 @@ import {
 
 const baseConfig: EnvironmentSettings = {
   clientGatewayUrl: 'https://safe-client.polis.tech/v1',
-  txServiceUrl: 'https://safe-tx.polis.tech/api/v1',
+  txServiceUrl: 'https://safe-txs.polis.tech/api/v1',
   safeUrl: 'https://safe.polis.tech/app',
   gasPrice: 1e9,
   rpcServiceUrl: 'https://rpc.polis.tech',
