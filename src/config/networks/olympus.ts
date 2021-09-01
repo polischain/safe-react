@@ -21,7 +21,7 @@ const baseConfig: EnvironmentSettings = {
   networkExplorerApiUrl: 'https://explorer.polis.tech/api',
 }
 
-const Olympus: NetworkConfig = {
+const olympus: NetworkConfig = {
   environment: {
     dev: {
       ...baseConfig,
@@ -65,4 +65,4 @@ const Olympus: NetworkConfig = {
   disabledFeatures: [FEATURES.DOMAIN_LOOKUP],
 }
 
-export default Olympus
+export default olympus
