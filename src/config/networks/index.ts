@@ -7,6 +7,7 @@ import volta from './volta'
 import polygon from './polygon'
 import bsc from './bsc'
 import sparta from './sparta'
+import olympus from './olympus'
 
 export default {
   local,
@@ -18,4 +19,5 @@ export default {
   polygon,
   bsc,
   sparta,
+  olympus
 }

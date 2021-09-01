@@ -54,6 +54,7 @@ export enum ETHEREUM_NETWORK {
   LOCAL = '4447',
   VOLTA = '73799',
   SPARTA = '333888',
+  OLYMPUS = '333999',
 }
 
 export type NetworkSettings = {
