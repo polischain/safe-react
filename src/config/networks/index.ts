@@ -17,5 +17,5 @@ export default {
   volta,
   polygon,
   bsc,
-  olympus
+  olympus,
 }
