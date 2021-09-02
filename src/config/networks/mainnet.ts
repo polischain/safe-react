@@ -39,7 +39,7 @@ const olympus: NetworkConfig = {
     textColor: '#ffffff',
     label: 'Olympus',
     isTestNet: false,
-    ethereumLayer: ETHEREUM_LAYER.L1,
+    ethereumLayer: ETHEREUM_LAYER.L2,
     nativeCoin: {
       address: '0x0000000000000000000000000000000000000000',
       name: 'Polis',
