@@ -1,61 +1,68 @@
-import EtherLogo from 'src/config/assets/token_eth.svg'
-import { EnvironmentSettings, ETHEREUM_LAYER, ETHEREUM_NETWORK, NetworkConfig } from 'src/config/networks/network.d'
-import { ETHGASSTATION_API_KEY } from 'src/utils/constants'
+import PolisLogo from 'src/config/assets/token_polis.svg'
+
+import {
+  EnvironmentSettings,
+  ETHEREUM_LAYER,
+  ETHEREUM_NETWORK,
+  FEATURES,
+  NetworkConfig,
+  WALLETS,
+} from 'src/config/networks/network.d'
 
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: 'https://safe-client.staging.gnosisdev.com/v1',
-  txServiceUrl: 'https://safe-transaction.mainnet.staging.gnosisdev.com/api/v1',
-  safeUrl: 'https://gnosis-safe.io/app',
-  gasPriceOracles: [
-    {
-      url: 'https://www.gasnow.org/api/v3/gas/price?utm_source=:gnosis_safe',
-      gasParameter: 'fast',
-      gweiFactor: '1',
-    },
-    {
-      url: 'https://ethgasstation.info/json/ethgasAPI.json',
-      gasParameter: 'fast',
-      gweiFactor: '1e8',
-    },
-  ],
-  safeAppsRpcServiceUrl: 'https://mainnet.infura.io:443/v3',
-  rpcServiceUrl: 'https://mainnet.infura.io:443/v3',
-  networkExplorerName: 'Etherscan',
-  networkExplorerUrl: 'https://etherscan.io',
-  networkExplorerApiUrl: 'https://api.etherscan.io/api',
+  clientGatewayUrl: 'https://safe-client.polis.tech/v1',
+  txServiceUrl: 'https://safe-txs.polis.tech/api/v1',
+  safeUrl: 'https://safe.polis.tech',
+  gasPrice: 1e9,
+  rpcServiceUrl: 'https://rpc.polis.tech',
+  safeAppsRpcServiceUrl: 'https://rpc.polis.tech',
+  networkExplorerName: 'Blockscout',
+  networkExplorerUrl: 'https://explorer.polis.tech',
+  networkExplorerApiUrl: 'https://explorer.polis.tech/api',
 }
 
-const mainnet: NetworkConfig = {
+const olympus: NetworkConfig = {
   environment: {
     dev: {
       ...baseConfig,
-      safeUrl: 'https://safe-team-mainnet.staging.gnosisdev.com/app/',
     },
     staging: {
       ...baseConfig,
-      safeUrl: 'https://safe-team-mainnet.staging.gnosisdev.com/app/',
     },
     production: {
       ...baseConfig,
-      clientGatewayUrl: 'https://safe-client.gnosis.io/v1',
-      txServiceUrl: 'https://safe-transaction.mainnet.gnosis.io/api/v1',
     },
   },
   network: {
     id: ETHEREUM_NETWORK.MAINNET,
-    backgroundColor: '#E8E7E6',
-    textColor: '#001428',
-    label: 'Mainnet',
+    backgroundColor: '#48A8A6',
+    textColor: '#ffffff',
+    label: 'Olympus',
     isTestNet: false,
     ethereumLayer: ETHEREUM_LAYER.L1,
     nativeCoin: {
       address: '0x0000000000000000000000000000000000000000',
-      name: 'Ether',
-      symbol: 'ETH',
+      name: 'Polis',
+      symbol: 'POLIS',
       decimals: 18,
-      logoUri: EtherLogo,
+      logoUri: PolisLogo,
     },
   },
+  disabledWallets: [
+    WALLETS.TREZOR,
+    WALLETS.LEDGER,
+    WALLETS.COINBASE,
+    WALLETS.FORTMATIC,
+    WALLETS.OPERA,
+    WALLETS.OPERA_TOUCH,
+    WALLETS.TORUS,
+    WALLETS.TRUST,
+    WALLETS.WALLET_LINK,
+    WALLETS.AUTHEREUM,
+    WALLETS.LATTICE,
+    WALLETS.KEYSTONE,
+  ],
+  disabledFeatures: [FEATURES.DOMAIN_LOOKUP],
 }
 
-export default mainnet
+export default olympus
