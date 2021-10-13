@@ -1,5 +1,4 @@
 import PolisLogo from 'src/config/assets/token_polis.svg'
-
 import {
   EnvironmentSettings,
   ETHEREUM_LAYER,
@@ -48,21 +47,8 @@ const olympus: NetworkConfig = {
       logoUri: PolisLogo,
     },
   },
-  disabledWallets: [
-    WALLETS.TREZOR,
-    WALLETS.LEDGER,
-    WALLETS.COINBASE,
-    WALLETS.FORTMATIC,
-    WALLETS.OPERA,
-    WALLETS.OPERA_TOUCH,
-    WALLETS.TORUS,
-    WALLETS.TRUST,
-    WALLETS.WALLET_LINK,
-    WALLETS.AUTHEREUM,
-    WALLETS.LATTICE,
-    WALLETS.KEYSTONE,
-  ],
   disabledFeatures: [FEATURES.DOMAIN_LOOKUP],
+  disabledWallets: [WALLETS.LATTICE],
 }
 
 export default olympus
