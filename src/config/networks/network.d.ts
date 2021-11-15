@@ -46,13 +46,26 @@ export enum ETHEREUM_NETWORK {
   MAINNET = '333999',
 }
 
+// Take from: https://chainid.network/shortNameMapping.json
+// Reference shortName here: https://github.com/ethereum-lists/chains
+export enum SHORT_NAME {
+  MAINNET = 'eth',
+  RINKEBY = 'rin',
+  BSC = 'bnb',
+  XDAI = 'xdai',
+  POLYGON = 'matic',
+  ENERGY_WEB_CHAIN = 'ewt',
+  LOCAL = 'local',
+  ARBITRUM = 'arb1',
+  VOLTA = 'vt',
+}
+
 export type NetworkSettings = {
-  // TODO: id now seems to be unnecessary
   id: ETHEREUM_NETWORK
+  shortName: SHORT_NAME
   backgroundColor: string
   textColor: string
   label: string
-  isTestNet: boolean
   ethereumLayer: ETHEREUM_LAYER
   nativeCoin: Token
 }
@@ -88,7 +101,6 @@ type GasPrice =
 export type EnvironmentSettings = GasPrice & {
   clientGatewayUrl: string
   txServiceUrl: string
-  safeUrl: string
   rpcServiceUrl: string
   safeAppsRpcServiceUrl: string
   networkExplorerName: string
@@ -97,12 +109,13 @@ export type EnvironmentSettings = GasPrice & {
 }
 
 type SafeEnvironments = {
+  test?: EnvironmentSettings
   dev?: EnvironmentSettings
   staging?: EnvironmentSettings
   production: EnvironmentSettings
 }
 
-export type NetworkInfo = Omit<NetworkSettings, 'isTestNet' | 'ethereumLayer' | 'nativeCoin'> & { safeUrl: string }
+export type NetworkInfo = Omit<NetworkSettings, 'ethereumLayer' | 'nativeCoin'>
 
 export interface NetworkConfig {
   network: NetworkSettings
